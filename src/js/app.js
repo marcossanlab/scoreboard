@@ -22,7 +22,7 @@ App = {
   },
 
   initWeb3: function() {
-    App.web3Provider = new Web3.providers.HttpProvider("http://35.176.19.89:22000");
+    App.web3Provider = new Web3.providers.HttpProvider("http://127.0.0.1:22001");
     var MyContract = TruffleContract({
       "contractName": "Users",
       "abi": [
@@ -4832,16 +4832,16 @@ App = {
         "91584648519": {
           "events": {},
           "links": {},
-          "address": "0x3a1deb095e0a142dd259d94e1c48cb89a123eb7a",
+          "address": "0xf27fa378e65dfee546445e610caf88ca7c123e47",
           "transactionHash": "0xf1361ccdc73520e0e5b8433d65c97000c4dcb7e110fb188703049817189f8ad6"
         }
       },
       "schemaVersion": "2.0.0",
       "updatedAt": "2018-03-20T16:08:02.573Z"
     });
-    MyContract.network_id = "91584648519";
-    MyContract.address = "0x3a1deb095e0a142dd259d94e1c48cb89a123eb7a";
-    MyContract.web3.eth.defaultAccount = "0xd65616c46a2e55957aff33e238b31bc568358e20";
+    MyContract.network_id = "9535753591";
+    MyContract.address = "0xf27fa378e65dfee546445e610caf88ca7c123e47";
+    MyContract.web3.eth.defaultAccount = "0x0defda53d6e0ba7627a4891b43737c5889e280cc";
     MyContract.setProvider(App.web3Provider);
     App.contracts["Users"] = MyContract;
 
@@ -4892,7 +4892,7 @@ App = {
     
     users = App.contracts["Users"];
 
-    users.web3.personal.unlockAccount("0xd65616c46a2e55957aff33e238b31bc568358e20", "Passw0rd", 1000, function(response) {
+    users.web3.personal.unlockAccount("0x0defda53d6e0ba7627a4891b43737c5889e280cc", "Passw0rd", 1000, function(response) {
       
       users.deployed().then( 
         function(instance) { 
@@ -4909,7 +4909,7 @@ App = {
   givePoints: function(id, amount) {
     users = App.contracts["Users"];
 
-    users.web3.personal.unlockAccount("0xd65616c46a2e55957aff33e238b31bc568358e20", "Passw0rd", 1000, function(response) {
+    users.web3.personal.unlockAccount("0x0defda53d6e0ba7627a4891b43737c5889e280cc", "Passw0rd", 1000, function(response) {
 
       users.deployed().then( 
         function(instance) { 
